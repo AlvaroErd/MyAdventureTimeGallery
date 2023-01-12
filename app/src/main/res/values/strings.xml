@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mi galería de arte</string>
+
+    <string name="previous">Anterior</string>
+    <string name="next">Siguiente </string>
+
+    <string name="art1_title">Imagen 1 Título</string>
+    <string name="art1_description">Imagen 1 Descripcion (Fecha)</string>
+    <string name="art2_title">Imagen 2 Título</string>
+    <string name="art2_description">Imagen 2 Descripcion (Fecha)</string>
+    <string name="art3_title">Imagen 3 Título</string>
+    <string name="art3_description">Imagen 3 Descripcion (Fecha)</string>
+    <string name="art4_title">Imagen 4 Título</string>
+    <string name="art4_description">Imagen 4 Descripcion (Fecha)</string>
+    <string name="art5_title">Imagen 5 Título</string>
+    <string name="art5_description">Imagen 5 Descripcion (Fecha)</string>
+
+</resources>
