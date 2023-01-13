@@ -14,7 +14,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -25,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.migaleradearte.ui.theme.MiGaleríaDeArteTheme
+
 
 val database: ImageDatabase = ImageDatabase()
 
@@ -64,7 +64,7 @@ fun MiGaleriaScreen(){
             )
         )
     }
-    val borderWidth = 4.dp
+    val borderWidth = 10.dp
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -82,21 +82,26 @@ fun MiGaleriaScreen(){
             Image(
                 painter = painterResource(id = database.allImages[currentStep].image),
                 contentDescription = stringResource(id = database.allImages[currentStep].description),
+                contentScale = ContentScale.Crop,
+//                contentScale = ContentScale.Inside,
                 modifier = Modifier
-//                    .size(400.dp)
-                    .wrapContentSize()
-                    .padding(16.dp)
-                    .clip(RoundedCornerShape(10.dp))
-                    .border(BorderStroke(borderWidth, rainbowColorsBrush)
+                    .size(500.dp)
 
-                    ),
-                        contentScale = ContentScale.Fit,
+
+                    .clip(RoundedCornerShape(10.dp))
+                    .border(
+                        BorderStroke(borderWidth, rainbowColorsBrush)
+                    )
+                ,
+
             )
+
         }
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = stringResource(id = database.allImages[currentStep].title),
                 fontSize = 18.sp,
